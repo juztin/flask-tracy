@@ -5,10 +5,12 @@ Flask-Tracy
 per request.  
 
 Time, url, client IP, client name, transaction ID, and 
-request duration are logged as informational.
+request duration are logged as informational to the `tracy` logger.
 
-`TRACY_REQURE_CLIENT` (OPTIONAL) configuration boolean used to return a 
-400 when no client name header (defaults to `Trace-ID`) is present.
+Configuration:
+ - `TRACY_REQURE_CLIENT`: (OPTIONAL) configuration boolean used to return a 400 when no client name header (defaults to `Trace-ID`) is present.
+
+Example:
 
 ::
 
@@ -37,3 +39,4 @@ or clone `the repository`_
 
 .. _Flask: http://flask.pocoo.org/
 .. _the repository: https://github.com/juztin/flask-tracy
+.. _Python Package Index: https://pypi.python.org/pypi/Flask-Tracy
