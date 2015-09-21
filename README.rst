@@ -26,6 +26,12 @@ Example:
     def index()
         return "Hello World"
 
+Example Log:
+
+::
+
+    2015-09-17 18:15:16,252 url:http://localhost:5000/ client_ip:192.168.100.1 client_name:APP_1 client_id:0be9d830-5d68-11e5-82d5-0242ac11000e duration:0.000363
+
 
 get Flask-Tracy
 ====================
