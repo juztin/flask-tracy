@@ -61,7 +61,7 @@ class Tracy(object):
         client = request.headers.get(trace_header_client, None)
         require_client = current_app.config.get("TRACY_REQUIRE_CLIENT", False)
         if client is None and require_client:
-            abort(400, "Missing %s header" % trace_header_id)
+            abort(400, "Missing %s header" % trace_header_client)
 
         request._tracy_client = client
         request._tracy_id = request.headers.get(trace_header_id, new_id())

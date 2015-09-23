@@ -9,7 +9,7 @@ with open('README.rst') as file:
 
 setup(
     name='Flask-Tracy',
-    version='0.0.1',
+    version='0.1.0',
     url='https://github.com/juztin/flask-tracy',
     license='BSD',
     author='Justin Wilson',
@@ -24,6 +24,7 @@ setup(
         'Flask>=0.9',
     ],
     classifiers=[
+        "Development Status :: 4 - Beta",
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
@@ -31,6 +32,7 @@ setup(
         'Programming Language :: Python',
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3 :: Only",
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules'
