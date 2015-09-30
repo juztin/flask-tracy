@@ -9,7 +9,7 @@ with open('README.rst') as file:
 
 setup(
     name='Flask-Tracy',
-    version='0.1.0',
+    version='0.1.1',
     url='https://github.com/juztin/flask-tracy',
     license='BSD',
     author='Justin Wilson',

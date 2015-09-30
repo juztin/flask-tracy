@@ -30,7 +30,7 @@ Example Log:
 
 ::
 
-    2015-09-17 18:15:16,252 url:http://localhost:5000/ client_ip:192.168.100.1 client_name:APP_1 client_id:0be9d830-5d68-11e5-82d5-0242ac11000e duration:0.000363
+    2015-09-17 18:15:16,252 200 http://localhost:5000/ 192.168.100.1 APP_1 0be9d830-5d68-11e5-82d5-0242ac11000e 0.000363
 
 
 get Flask-Tracy

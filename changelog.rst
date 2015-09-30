@@ -3,6 +3,11 @@ Changelog
 
 .. currentmodule:: Flask-Tracy
 
+Release 0.1.1
+-------------
+
+UPDATE - Added the status code, of the response, to the trace log.
+
 Release 0.1.0
 -------------
 

@@ -20,6 +20,7 @@ logger = getLogger("tracy")
 trace_header_client = "Trace-Client"
 trace_header_id = "Trace-ID"
 trace_format = ("%(asctime)s"
+                " %(status_code)s"
                 " %(url)s"
                 " %(client_ip)s"
                 " %(trace_name)s"
@@ -86,7 +87,8 @@ class Tracy(object):
             trace_client = request._tracy_client
 
         # Extra log kwargs.
-        d = {'url': request.base_url,
+        d = {'status_code': response.status_code,
+             'url': request.base_url,
              'client_ip': request.remote_addr,
              'trace_name': trace_client,
              'trace_id': trace_id,
