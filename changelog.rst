@@ -3,7 +3,12 @@ Changelog
 
 .. currentmodule:: Flask-Tracy
 
-Release 0.1.1
+Release 0.1.3
+-------------
+
+UPDATE - Routes can now be excluded from tracing.
+
+Release 0.1.2
 -------------
 
 UPDATE - Added the status code, of the response, to the trace log.

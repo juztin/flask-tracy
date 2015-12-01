@@ -39,10 +39,11 @@ class Tracy(object):
                                otherwise a 400 is returned.
     """
 
-    def __init__(self, app=None):
+    def __init__(self, app=None, excluded_routes=[]):
         self.app = app
         if app is not None:
             self.init_app(app)
+        self.excluded_routes = excluded_routes
 
     def init_app(self, app):
         """Setup before_request, after_request handlers for tracing.
@@ -58,6 +59,11 @@ class Tracy(object):
     def _before(self):
         """Records the starting time of this reqeust.
         """
+        # Don't trace excluded routes.
+        if request.path in self.excluded_routes:
+            request._tracy_exclude = True
+            return
+
         request._tracy_start_time = monotonic()
         client = request.headers.get(trace_header_client, None)
         require_client = current_app.config.get("TRACY_REQUIRE_CLIENT", False)
@@ -71,6 +77,10 @@ class Tracy(object):
         """Calculates the request duration, and adds a transaction
         ID to the header.
         """
+        # Ignore excluded routes.
+        if getattr(request, '_tracy_exclude', False):
+            return response
+
         duration = None
         if getattr(request, '_tracy_start_time', None):
             duration = monotonic() - request._tracy_start_time

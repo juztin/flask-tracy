@@ -19,7 +19,10 @@ Example:
 
     app = Flask(__name__)
     appp.config.from_object('some_file.ini')
+
     Tracy(app)
+    # To exclude routes from being traced.
+    #Tracy(app, excluded_routes=['/test/'])
 
 
     @app.route('/')
